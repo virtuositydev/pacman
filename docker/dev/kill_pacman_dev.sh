@@ -5,3 +5,6 @@
 
 # NodeJS
 ./kill_pacman_nodejs_dev.sh
+
+docker network rm my-net 
+docker volume prune -f

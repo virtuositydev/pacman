@@ -1,19 +1,36 @@
 # pacman
 Pac-Man
 
-## Install dependencies
+## Applications Architecture Components
+1. WebApp: NodeJS (boron)
+2. Database: MongoDB (3.4)
+
+### Configurations (WebApp's environment variables)
+1. MongoDB's hostname: MONGO_SERVICE_HOST
+2. MongoDB's port: MY_MONGO_PORT
+3. Other configurations, reference [config.js in this repo](lib/config.js)
+
+## MongoDB setup
+1. Install locally, reference [MongoDB's documentation](https://www.mongodb.com/docs/manual/administration/install-community/)
+2. Install using docker
+```
+docker run --name pacman-mongo-0 --network my-net -p 27017:27017 -d mongo:3.4
+```
+
+## NodeJS WebApp setup
+### Install dependencies
 
 ```
 npm install
 ```
 
-## Getting started
+### Getting started
 
 ```
 npm run start
 ```
 
-## Development
+### Development
 
 ```
 npm run dev
