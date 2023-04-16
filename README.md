@@ -5,11 +5,6 @@ Pac-Man
 1. WebApp: NodeJS (boron)
 2. Database: MongoDB (3.4)
 
-### Configurations (WebApp's environment variables)
-1. MongoDB's hostname: MONGO_SERVICE_HOST
-2. MongoDB's port: MY_MONGO_PORT
-3. Other configurations, reference [config.js in this repo](lib/config.js)
-
 ## MongoDB setup
 1. Install locally, reference [MongoDB's documentation](https://www.mongodb.com/docs/manual/administration/install-community/)
 2. Install using docker
@@ -35,6 +30,12 @@ npm run start
 ```
 npm run dev
 ```
+
+### Configurations (WebApp's environment variables)
+1. MongoDB's hostname: MONGO_SERVICE_HOST
+2. MongoDB's port: MY_MONGO_PORT
+3. Other configurations, reference [config.js in this repo](lib/config.js)
+
 
 ## Create Application Container Image
 
