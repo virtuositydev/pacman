@@ -7,8 +7,9 @@ Pac-Man
 
 ## MongoDB setup
 1. Install locally, reference [MongoDB's documentation](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. Install using docker
+2. Install using docker (Install Docker on Ubuntu: https://docs.docker.com/engine/install/ubuntu/)
 ```
+docker network create my-net
 docker run --name pacman-mongo-0 --network my-net -p 27017:27017 -d mongo:3.4
 ```
 
@@ -38,6 +39,8 @@ npm run dev
 
 
 ## Create Application Container Image
+
+*This section is for reference only, familiarity with Docker is required
 
 ### Docker Container Image
 
