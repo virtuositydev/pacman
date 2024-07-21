@@ -8,6 +8,9 @@
     "start": "node .",
     "dev": "nodemon ."
   },
+  "engines": {
+    "node":"6.x"
+  },
   "license": "GPLv3",
   "dependencies": {
     "body-parser": "^1.17.1",

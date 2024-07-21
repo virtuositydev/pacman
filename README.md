@@ -1,19 +1,19 @@
 # pacman
 Pac-Man
 
-## Applications Architecture Components
-1. WebApp: NodeJS (boron)
-2. Database: MongoDB (3.4)
+## Applications Components and Versions
+1. WebApp: NodeJS Boron (v6.9 - v6.17)
+2. Database: MongoDB 3.4
 
 ## MongoDB setup
-1. Install locally, reference [MongoDB's documentation](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. Install using docker (Install Docker on Ubuntu: https://docs.docker.com/engine/install/ubuntu/)
-```
-docker network create my-net
-docker run --name pacman-mongo-0 --network my-net -p 27017:27017 -d mongo:3.4
-```
+1. Install locally or Docker, reference [MongoDB's documentation](https://www.mongodb.com/docs/manual/administration/install-community/)
 
 ## NodeJS WebApp setup
+### WebApp's Configurations (Environment Variables)
+1. MongoDB's hostname: MONGO_SERVICE_HOST
+2. MongoDB's port: MY_MONGO_PORT
+3. Other configurations, reference [config.js in this repo](lib/config.js)
+
 ### Install dependencies
 
 ```
@@ -32,12 +32,6 @@ npm run start
 npm run dev
 ```
 
-### Configurations (WebApp's environment variables)
-1. MongoDB's hostname: MONGO_SERVICE_HOST
-2. MongoDB's port: MY_MONGO_PORT
-3. Other configurations, reference [config.js in this repo](lib/config.js)
-
-
 ## Create Application Container Image
 
 *This section is for reference only, familiarity with Docker is required
@@ -46,16 +40,15 @@ npm run dev
 
 The [Dockerfile](docker/Dockerfile) performs the following steps:
 
-1. It is based on Node.js LTS Version 6 (Boron).
-1. It then clones the Pac-Man game into the configured application directory.
-1. Exposes port 8080 for the web server.
-1. Starts the Node.js application using `npm start`.
+1. It is based on Node.js Version 6 (Boron).
+2. It then copies the Pac-Man game into the configured application directory.
+3. Exposes port 8080 for the web server.
+4. Starts the Node.js application using `npm start`.
 
 To build the image run:
 
 ```
-cd docker
-docker build -t <registry>/<user>/pacman-nodejs-app .
+docker build -t <registry>/<user>/pacman-nodejs-app -f ./docker/Dockerfile .
 ```
 
 You can test the image by running:
